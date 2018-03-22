@@ -20,6 +20,9 @@ namespace Microsoft.eShopWeb
 {
     public class Startup
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private IServiceCollection _services;
         public Startup(IConfiguration configuration)
         {
@@ -40,7 +43,7 @@ namespace Microsoft.eShopWeb
         public void ConfigureTestingServices(IServiceCollection services)
         {
             // use in-memory database
-            services.AddDbContext<CatalogContext>(c => 
+            services.AddDbContext<CatalogContext>(c =>
                 c.UseInMemoryDatabase("Catalog"));
 
             // Add Identity DbContext
@@ -112,7 +115,7 @@ namespace Microsoft.eShopWeb
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, 
+        public void Configure(IApplicationBuilder app,
             IHostingEnvironment env)
         {
             if (env.IsDevelopment())
